@@ -1,0 +1,19 @@
+{
+  "artigos": [
+    {
+      "titulo": "Física Quântica Explicada",
+      "descricao": "Por Prof. Roberto Alves",
+      "data": "22 fev 2025"
+    },
+    {
+      "titulo": "O Futuro da Inteligência Artificial",
+      "descricao": "Por Dra. Beatriz Souza",
+      "data": "25 fev 2025"
+    },
+    {
+      "titulo": "Introdução à Computação em Nuvem",
+      "descricao": "Por Carlos Mendes",
+      "data": "28 fev 2025"
+    }
+  ]
+}
