@@ -3,17 +3,29 @@
     {
       "titulo": "Física Quântica Explicada",
       "descricao": "Por Prof. Roberto Alves",
-      "data": "22 fev 2025"
+      "data": "22 fev 2025",
+      "descricaoDetalhada": "Uma introdução aos conceitos fundamentais da Física Quântica, explorando fenômenos como superposição, dualidade onda-partícula, princípio da incerteza e aplicações modernas em computação quântica e criptografia.",
+      "principiosFundamentais": "A Física Quântica baseia-se na quantização da energia, na dualidade onda-partícula, no princípio da incerteza de Heisenberg, na superposição de estados e no emaranhamento quântico. Esses conceitos descrevem o comportamento da matéria e da energia em escalas microscópicas.",
+      "videoPath": "assets/videos/artigos/fisica.mp4",
+      "audioPath": "assets/audios/artigos/fisica.mp3"
     },
     {
       "titulo": "O Futuro da Inteligência Artificial",
       "descricao": "Por Dra. Beatriz Souza",
-      "data": "25 fev 2025"
+      "data": "25 fev 2025",
+      "descricaoDetalhada": "Uma análise das tendências atuais e futuras da Inteligência Artificial, incluindo aprendizado de máquina, modelos generativos, automação de processos e os desafios éticos relacionados à adoção dessas tecnologias.",
+      "principiosFundamentais": "A Inteligência Artificial fundamenta-se em algoritmos capazes de aprender com dados, reconhecimento de padrões, tomada de decisão automatizada, redes neurais artificiais e processamento de linguagem natural. Seu objetivo é simular capacidades cognitivas humanas em sistemas computacionais.",
+      "videoPath": "assets/videos/artigos/inteligencia_artificial.mp4",
+      "audioPath": "assets/audios/artigos/inteligencia_artificial.mp3"
     },
     {
       "titulo": "Introdução à Computação em Nuvem",
       "descricao": "Por Carlos Mendes",
-      "data": "28 fev 2025"
+      "data": "28 fev 2025",
+      "descricaoDetalhada": "Apresenta os conceitos básicos da Computação em Nuvem, seus modelos de serviço, benefícios para empresas e desenvolvedores, além das principais arquiteturas utilizadas em ambientes modernos.",
+      "principiosFundamentais": "A Computação em Nuvem é baseada na virtualização de recursos, escalabilidade sob demanda, elasticidade, compartilhamento de infraestrutura, alta disponibilidade e pagamento conforme o uso. Os principais modelos incluem IaaS, PaaS e SaaS.",
+      "videoPath": "assets/videos/artigos/computacao_nuvem.mp4",
+      "audioPath": "assets/audios/artigos/computacao_nuvem.mp3"
     }
   ]
 }

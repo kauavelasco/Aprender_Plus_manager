@@ -1,4 +1,8 @@
+import 'package:aprender_plus_manager/screens/account_screen.dart';
+import 'package:aprender_plus_manager/screens/article_screen.dart';
+import 'package:aprender_plus_manager/screens/explore_screen.dart';
 import 'package:aprender_plus_manager/screens/home_screen.dart';
+import 'package:aprender_plus_manager/screens/resume_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeMenus extends StatefulWidget {
@@ -14,6 +18,12 @@ class _HomeMenusState extends State<HomeMenus> {
 
   final List<Widget> _screens = [
     const HomeScreen(),
+    const ExploreScreen(),
+    const ResumeScreen(),
+    const ArticleScreen(
+      artigo: null,
+    ),
+    const AccountScreen(),
   ];
 
   void _onItemTapped(int index) {

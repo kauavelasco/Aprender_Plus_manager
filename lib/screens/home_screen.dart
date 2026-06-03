@@ -1,5 +1,6 @@
 import 'package:aprender_plus_manager/models/artigodata_model.dart';
 import 'package:aprender_plus_manager/models/carouseldata_model.dart';
+import 'package:aprender_plus_manager/screens/article_screen.dart';
 import 'package:aprender_plus_manager/services/artigo_service.dart';
 import 'package:aprender_plus_manager/services/carousel_service.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -66,7 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
       );
     }
 
-    final List<Map<String, dynamic>> _carrosel = carousel.map((item) {
+    final List<Map<String, dynamic>> carrosel = carousel.map((item) {
       return {"titulo": item.titulo};
     }).toList();
 
@@ -93,11 +94,11 @@ class _HomeScreenState extends State<HomeScreen> {
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
           child: Column(
             children: [
-              if (_carrosel.isNotEmpty) ...[
+              if (carrosel.isNotEmpty) ...[
                 CarouselSlider.builder(
-                  itemCount: _carrosel.length,
+                  itemCount: carrosel.length,
                   itemBuilder: (context, index, pageViewIndex) {
-                    final dado = _carrosel[index];
+                    final dado = carrosel[index];
 
                     return Container(
                       margin: const EdgeInsets.symmetric(horizontal: 8.0),
@@ -159,9 +160,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                     enlargeCenterPage: true,
                     padEnds: true,
-                    viewportFraction: 0.85,
+                    viewportFraction: 0.90,
                     height: 200,
-                    enableInfiniteScroll: _carrosel.length > 1,
+                    enableInfiniteScroll: carrosel.length > 1,
                     initialPage: 0,
                     scrollDirection: Axis.horizontal,
                   ),
@@ -173,7 +174,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: [
                       AnimatedSmoothIndicator(
                         activeIndex: _indexAtual,
-                        count: _carrosel.length,
+                        count: carrosel.length,
                         axisDirection: Axis.horizontal,
                         effect: const WormEffect(
                           dotColor: Colors.grey,
@@ -210,35 +211,44 @@ class _HomeScreenState extends State<HomeScreen> {
                       return Column(
                         children: [
                           SizedBox(height: 10),
-                          Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
-                            width: 400,
-                            height: 100,
-                            decoration: BoxDecoration(
-                              color: const Color(0xFF101010),
-                              borderRadius: BorderRadius.circular(16),
-                            ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  item.titulo,
-                                  style: const TextStyle(
-                                    color: Color(0xFFFCFCFC),
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 20,
-                                  ),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context, MaterialPageRoute(
+                                  builder: (context) => ArticleScreen(artigo: item),
                                 ),
-                                const SizedBox(height: 4),
-                                Text(
-                                  '${item.descricao} • ${item.data}',
-                                  style: TextStyle(
-                                    // ignore: deprecated_member_use
-                                    color: const Color(0xFFFCFCFC).withOpacity(0.6),
+                              );
+                            },
+                            child: Container(
+                              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
+                              width: 400,
+                              height: 100,
+                              decoration: BoxDecoration(
+                                color: const Color(0xFF101010),
+                                borderRadius: BorderRadius.circular(16),
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    item.titulo,
+                                    style: const TextStyle(
+                                      color: Color(0xFFFCFCFC),
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 20,
+                                    ),
                                   ),
-                                ),
-                              ],
+                                  const SizedBox(height: 4),
+                                  Text(
+                                    '${item.descricao} • ${item.data}',
+                                    style: TextStyle(
+                                      // ignore: deprecated_member_use
+                                      color: const Color(0xFFFCFCFC).withOpacity(0.6),
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ],
